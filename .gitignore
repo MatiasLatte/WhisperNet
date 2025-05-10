@@ -8,6 +8,7 @@ WhisperNet_model.h5
 # PyCharm/JetBrains IDE settings
 .idea/
 
-# Python cache
+# Ignore all Python cache folders and files
 __pycache__/
-*.py[cod]__pycache__/
+**/__pycache__/
+*.py[cod]
