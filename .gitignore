@@ -9,4 +9,4 @@ WhisperNet_model.h5
 
 # Python cache
 __pycache__/
-*.py[cod]
+*.py[cod]__pycache__/
