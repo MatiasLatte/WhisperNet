@@ -1,2 +1,12 @@
 # Ignore the trained model
 WhisperNet_model.h5
+
+# macOS junk
+.DS_Store
+
+# PyCharm/JetBrains IDE settings
+.idea/
+
+# Python cache
+__pycache__/
+*.py[cod]
