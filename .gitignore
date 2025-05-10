@@ -3,6 +3,7 @@ WhisperNet_model.h5
 
 # macOS junk
 .DS_Store
+**/.DS_Store
 
 # PyCharm/JetBrains IDE settings
 .idea/
