@@ -1,8 +1,8 @@
 import time
 from backend.processing.classifier import classify_and_handle
 
-# Path to your test file
-test_file = "buffer/22__19_07_13_adventure_maniobra copy.wav"
+# Path to test file
+test_file = "../backend/processing/buffer/testAudio1.wav"
 
 # Simulate a hydrophone ID and timestamp
 hydrophone_id = "H1"
