@@ -13,7 +13,7 @@ DETECT_DIR.mkdir(exist_ok=True, parents=True)
 
 
 
-def classify_and_handle(filepath: str, hydro_id: str, timestamp: float) -> None:
+def classify_and_handle(filepath: str, hydro_id: str, timestamp: float) -> bool:
     data = preprocess_audio(filepath)
     if data is None:
         print("Empty data")
@@ -26,11 +26,14 @@ def classify_and_handle(filepath: str, hydro_id: str, timestamp: float) -> None:
     if cls == 1:
         print(f"Propeller — promoting to detections/")
         _store_detection(filepath, data, timestamp)
-        pos = TDOA(trigger_id=hydro_id, trigger_time=timestamp)
-        print(f"Estimated source location: {pos}")
+
+        return True
+
+        #TODO: this is the editted code
     else:
         print(f"Not a propeller — discarding")
         os.remove(filepath)             # clear the buffer slot
+        return False
 
 
 def _store_detection(src_wav: str, mfcc_data: dict, ts: float) -> None:
