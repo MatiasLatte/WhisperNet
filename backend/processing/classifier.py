@@ -17,7 +17,7 @@ def classify_and_handle(filepath: str, hydro_id: str, timestamp: float) -> bool:
     data = preprocess_audio(filepath)
     if data is None:
         print("Empty data")
-        return
+        return False
 
     x = np.array(data["mfcc"])[..., np.newaxis]  # shape: (1, 130, 13, 1)
     probs = model.predict(x)[0]
