@@ -35,7 +35,9 @@ def active_hearing() -> None:
 
 def TDOA_trigger_signal(total_count_of_positive_triggers:int, detection_status_array:list) -> None:
     if total_count_of_positive_triggers >= 4:
-        TDOA_preprocessor(detection_status_array)  # TODO: add as inputs to the function, pressure, temperature, and salinity
+        target_pos = TDOA_preprocessor(detection_status_array)  # TODO: add as inputs to the function, pressure, temperature, and salinity
+
+
 def run():
     while True:
         passive_hearing()

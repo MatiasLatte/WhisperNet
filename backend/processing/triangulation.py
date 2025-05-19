@@ -48,7 +48,7 @@ def TDOA(obs: list) -> tuple:
 
 
 # ----------------------- Timestamp Reader ------------------------
-def TDOA_preprocessor(detection_status_array:list)->None:
+def TDOA_preprocessor(detection_status_array:list)->tuple | None:
     TDOA_time_id_array = []
     for hydro_dict in detection_status_array:
         if hydro_dict["status"] == True:
@@ -68,5 +68,6 @@ def TDOA_preprocessor(detection_status_array:list)->None:
                     position = {k: matching_hydro[k] for k in ("x", "y", "z")}
 
                 TDOA_time_id_array.append([timestamp, position])
-    TDOA(TDOA_time_id_array)
+    pos = TDOA(TDOA_time_id_array)
+    return None if pos == (None, None, None) else pos
 
